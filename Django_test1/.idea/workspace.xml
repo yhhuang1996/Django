@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9fec9cb-14c6-4648-a95a-19f2dd66a884" name="Default Changelist" comment="" />
+    <list default="true" id="e9fec9cb-14c6-4648-a95a-19f2dd66a884" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/booktest/books.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/booktest/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/booktest/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django_test1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_test1/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booktest/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booktest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booktest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -21,13 +31,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Xw7aVXr2aKfnGni1PVVVwahXFC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -73,6 +86,9 @@
       <workItem from="1581945441029" duration="2000" />
       <workItem from="1581945483985" duration="5967000" />
       <workItem from="1581956041043" duration="12000" />
+      <workItem from="1581956910000" duration="145000" />
+      <workItem from="1581991345321" duration="2606000" />
+      <workItem from="1581994735601" duration="2653000" />
     </task>
     <servers />
   </component>
@@ -80,6 +96,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="243" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581956935970">
+      <screen x="0" y="23" width="2560" height="981" />
+    </state>
+    <state x="243" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.981@0.23.2560.981" timestamp="1581956935970" />
+    <state x="225" y="94" key="CommitChangelistDialog2" timestamp="1581957043184">
+      <screen x="0" y="23" width="2560" height="981" />
+    </state>
+    <state x="225" y="94" key="CommitChangelistDialog2/0.23.2560.981@0.23.2560.981" timestamp="1581957043184" />
     <state x="380" y="163" key="SettingsEditor" timestamp="1581945496857">
       <screen x="0" y="23" width="2560" height="981" />
     </state>
