@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>图书信息</title>
 </head>
 <body>
-$END$
+图书内容如下
+{% for i in book_name %}
+    <li><a href="{{ i.id }}/">{{ i.btitle }}</a></li>
+{% endfor %}
 </body>
 </html>

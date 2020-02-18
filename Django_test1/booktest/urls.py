@@ -1,7 +1,9 @@
-from django.urls import path
+from django.urls import path, re_path
 from booktest import views
+
 
 urlpatterns = [
     path('index/', views.index),
-    path('index2/', views.index2)
+    path('books/', views.books),
+    re_path(r'^books/(\d+)/$', views.detail),
 ]

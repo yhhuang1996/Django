@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>详细信息</title>
 </head>
 <body>
-$END$
+<h1>{{ book.btitle }}</h1>
+英雄信息如下：
+<ul>
+    {% for h in hero %}
+        <li>{{ h.hname }}</li>
+    {% empty %}
+        <li>没有英雄信息</li>
+    {% endfor %}
+
+</ul>
 </body>
 </html>
