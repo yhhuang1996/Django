@@ -1,8 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from datetime import date
+
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from booktest.models import BookInfo
-from booktest.models import HeroInfo
+from booktest.models import BookInfo, AreaInfo
+
 
 
 # def my_render(template_path, context_dict={}):
@@ -19,12 +21,22 @@ from booktest.models import HeroInfo
 # Create your views here.
 def index(request):
     # return HttpResponse('OK')
-    return render(request, 'booktest/index.html', {'content': 'hello world', 'list': list(range(1, 9))})
+    book = BookInfo.objects.all()
+    return render(request, 'booktest/index.html', {'book': book})
 
 
-def books(request):
-    b = BookInfo.objects.all()
-    return render(request, 'booktest/books.html', {'book_name': b})
+def create(request):
+    new_book = BookInfo()
+    new_book.btitle = '流星蝴蝶剑'
+    new_book.bpub_date = date(1990, 1, 1)
+    new_book.save()
+    return redirect('/index')
+
+
+def delete(request, bid):
+    delete_book = BookInfo.objects.get(id=bid)
+    delete_book.delete()
+    return redirect('/index')
 
 
 def detail(request, bid):
@@ -33,3 +45,10 @@ def detail(request, bid):
     # 查询图书对应英雄信息，一对多
     heros = book.heroinfo_set.all()
     return render(request, 'booktest/detail.html', {'book': book, 'hero': heros})
+
+
+def areas(request):
+    area = AreaInfo.objects.get(aTitle='青岛市')
+    parent = area.aParent
+    children = area.areainfo_set.all()
+    return render(request, 'booktest/areas.html', {'area': area, 'parent': parent, 'children': children})
