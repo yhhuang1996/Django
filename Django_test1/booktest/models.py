@@ -5,7 +5,27 @@ from django.db import models
 
 class BookInfoManager(models.Manager):
     """图书模型管理器类"""
-    pass
+    # 1.改变查询结果集
+    def all(self):
+        # 1.调用父类的all方法,获取所有数据
+        book = super().all()
+        # 2.对数据进行过滤
+        book.filter(isDelete=True)
+        # 3.返回book
+        return book
+
+    # 2.添加额外方法，操作模型类对应的数据表
+    def create_book(self, btitle, bpub_date):
+        # 1.创建一个图书对象
+        # 获取self所在的模型类
+        book = self.model()
+
+        book.btitle = btitle
+        book.bpub_date = bpub_date
+        # 2.保存进数据库
+        book.save()
+        # 3.返回obj
+        return book
 
 
 class BookInfo(models.Model):
@@ -25,7 +45,24 @@ class BookInfo(models.Model):
     def __str__(self):
         return self.btitle
 
-    object = BookInfoManager()
+    objects = BookInfoManager()
+
+    # 元选项
+    # 指定模型类对应的表名
+    class Meta:
+        db_table = 'bookinfo'
+
+    # @classmethod
+    # def create_book(cls, btitle, bpub_date):
+    #     # 1.创建一个图书对象
+    #     obj = cls()
+    #     obj.btitle = btitle
+    #     obj.bpub_date = bpub_date
+    #     # 2.保存进数据库
+    #     obj.save()
+    #     # 3.返回obj
+    #     return obj
+
 
 class HeroInfo(models.Model):
     """英雄人物类，多类"""

@@ -8,4 +8,7 @@ urlpatterns = [
     path('areas/', views.areas),
     re_path(r'delete/(\d+)/$', views.delete),
     re_path(r'^books/(\d+)/$', views.detail),
+    path('show_args<int:num>/', views.show_arg),
+    path('login/', views.login),
+    path('login_check/', views.login_check)
 ]

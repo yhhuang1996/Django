@@ -52,3 +52,28 @@ def areas(request):
     parent = area.aParent
     children = area.areainfo_set.all()
     return render(request, 'booktest/areas.html', {'area': area, 'parent': parent, 'children': children})
+
+
+def show_arg(request, num):
+    return HttpResponse(num)
+
+
+def login(request):
+    return render(request, 'booktest/login.html')
+
+
+def login_check(request):
+    # request.POST  保存的是POST方式提交的参数
+    # request.GET  保存的是GET方式提交的参数
+    # 1.获取提交的用户名和密码
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    if username == 'smart' and password =='123':
+        # 用户名密码正确，跳转到首页
+        return redirect('/index')
+    else:
+        # 用户名密码错误，跳转到登录页面
+        return redirect('/login')
+    # 2.验证
+    # 3.返回应答
+    # return HttpResponse('ok')

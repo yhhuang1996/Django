@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9fec9cb-14c6-4648-a95a-19f2dd66a884" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/booktest/books.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/booktest/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/booktest/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booktest/migrations/0007_auto_20200219_2234.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/booktest/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_test1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_test1/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booktest/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booktest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booktest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booktest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/views.py" afterDir="false" />
     </list>
@@ -40,13 +40,37 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django tests.Test: templates.booktest">
+    <configuration name="Test: templates.booktest" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="Django_test1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="templates.booktest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Django_test1/templates/booktest/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="Django_test1" type="Python.DjangoServer" factoryName="Django server">
       <module name="Django_test1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,6 +94,12 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: templates.booktest" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -89,11 +119,20 @@
       <workItem from="1581956910000" duration="145000" />
       <workItem from="1581991345321" duration="2606000" />
       <workItem from="1581994735601" duration="2653000" />
+      <workItem from="1582025066869" duration="6469000" />
+      <workItem from="1582079616852" duration="140000" />
+      <workItem from="1582086881383" duration="209000" />
+      <workItem from="1582105577420" duration="1034000" />
+      <workItem from="1582117480633" duration="6196000" />
+      <workItem from="1582126985926" duration="4218000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="243" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581956935970">
