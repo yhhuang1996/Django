@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9fec9cb-14c6-4648-a95a-19f2dd66a884" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/booktest/migrations/0007_auto_20200219_2234.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/booktest/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-1.12.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/booktest/ajax_login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/booktest/ajax_test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django_test1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django_test1/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booktest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booktest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booktest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktest/views.py" afterDir="false" />
     </list>
@@ -124,7 +123,7 @@
       <workItem from="1582086881383" duration="209000" />
       <workItem from="1582105577420" duration="1034000" />
       <workItem from="1582117480633" duration="6196000" />
-      <workItem from="1582126985926" duration="4218000" />
+      <workItem from="1582126985926" duration="10117000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax登录</title>
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('#ajax_login').click(function () {
+                // 1.获取用户名和密码
+                const username = $('#username').val();
+                const password = $('#password').val();
+                // 2.发起post-ajax请求，携带用户名和密码
+                $.ajax({
+                    'url': '/ajax_check/',
+                    'type': 'post',
+                    'data': {'username': username, 'password': password},
+                    'dataType': 'json',
+                }).success(function (data) {
+                    if(data.res === 1){
+                        //跳转到首页
+                        location.href = '/index'
+                    }else{
+                        $('#message').show().html('用户名或密码错误')
+                    }
+                })
+            })
+        })
+    </script>
+    <style>
+        #message{
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    用户名：<input type="text" id="username">
+    密码：<input type="password" id="password">
+    <input id="ajax_login" type="button" value="登录">
+</div>
+
+<div id="message"></div>
+</body>
+</html>

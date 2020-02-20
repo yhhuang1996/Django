@@ -1,10 +1,9 @@
 from datetime import date
 
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.template import loader
 from booktest.models import BookInfo, AreaInfo
-
 
 
 # def my_render(template_path, context_dict={}):
@@ -68,7 +67,7 @@ def login_check(request):
     # 1.获取提交的用户名和密码
     username = request.POST.get('username')
     password = request.POST.get('password')
-    if username == 'smart' and password =='123':
+    if username == 'smart' and password == '123':
         # 用户名密码正确，跳转到首页
         return redirect('/index')
     else:
@@ -77,3 +76,27 @@ def login_check(request):
     # 2.验证
     # 3.返回应答
     # return HttpResponse('ok')
+
+
+def ajax(requset):
+    return render(requset, 'booktest/ajax_test.html')
+
+
+def ajax_handle(request):
+    return JsonResponse({'res': 1})
+
+
+def ajax_login(requset):
+    return render(requset, 'booktest/ajax_login.html')
+
+
+def ajax_check(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    if username == 'smart' and password == '123':
+        # 用户名密码正确，跳转到首页
+        ret = 1
+    else:
+        # 用户名密码错误，跳转到登录页面
+        ret = 0
+    return JsonResponse({'res': ret})
