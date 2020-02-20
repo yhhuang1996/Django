@@ -10,11 +10,12 @@
                 // 1.获取用户名和密码
                 const username = $('#username').val();
                 const password = $('#password').val();
+                const remember = $("input[name='remember']:checked").val();
                 // 2.发起post-ajax请求，携带用户名和密码
                 $.ajax({
                     'url': '/ajax_check/',
                     'type': 'post',
-                    'data': {'username': username, 'password': password},
+                    'data': {'username': username, 'password': password, 'remember': remember},
                     'dataType': 'json',
                 }).success(function (data) {
                     if(data.res === 1){
@@ -36,8 +37,9 @@
 </head>
 <body>
 <div>
-    用户名：<input type="text" id="username">
+    用户名：<input type="text" id="username" value="{{ username }}">
     密码：<input type="password" id="password">
+    <input type="checkbox" name="remember">记住用户名
     <input id="ajax_login" type="button" value="登录">
 </div>
 

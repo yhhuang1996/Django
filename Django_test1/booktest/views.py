@@ -67,6 +67,7 @@ def login_check(request):
     # 1.获取提交的用户名和密码
     username = request.POST.get('username')
     password = request.POST.get('password')
+
     if username == 'smart' and password == '123':
         # 用户名密码正确，跳转到首页
         return redirect('/index')
@@ -78,25 +79,68 @@ def login_check(request):
     # return HttpResponse('ok')
 
 
-def ajax(requset):
-    return render(requset, 'booktest/ajax_test.html')
+def ajax(request):
+    return render(request, 'booktest/ajax_test.html')
 
 
 def ajax_handle(request):
     return JsonResponse({'res': 1})
 
 
-def ajax_login(requset):
-    return render(requset, 'booktest/ajax_login.html')
+def ajax_login(request):
+    # 判断用户是否登录
+    if 'is_login' in request.session:
+        # 用户已登录，跳转到首页
+        return redirect('/index')
+    else:
+        # 获取cookie username
+        if 'username' in request.COOKIES:
+            username = request.COOKIES['username']
+            print(username)
+        else:
+            username = ''
+        return render(request, 'booktest/ajax_login.html', {'username': username})
 
 
 def ajax_check(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
+    remember = request.POST.get('remember')
+    print(remember)
     if username == 'smart' and password == '123':
         # 用户名密码正确，跳转到首页
         ret = 1
+        # 记住用户登录状态
+        request.session['is_login'] = True
+        if remember == 'on':
+            response = JsonResponse({'res': ret})
+            response.set_cookie('username', username, max_age=24 * 3600)
+            return response
     else:
         # 用户名密码错误，跳转到登录页面
         ret = 0
     return JsonResponse({'res': ret})
+
+
+def set_cookie(request):
+    response = HttpResponse()
+    # response.set_cookie('num', 1)
+    response.set_cookie('num', 1, max_age=14 * 24 * 3600)
+    return response
+
+
+def get_cookie(request):
+    num = request.COOKIES['num']
+    return HttpResponse(num)
+
+
+def set_session(request):
+    request.session['username'] = 'smart'
+    request.session['age'] = 18
+    return HttpResponse('设置session')
+
+
+def get_session(request):
+    username = request.session['username']
+    age = request.session['age']
+    return HttpResponse(username + ':' + str(age))
