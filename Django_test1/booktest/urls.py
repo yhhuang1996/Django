@@ -18,4 +18,7 @@ urlpatterns = [
     path('get_cookie/', views.get_cookie),
     path('set_session/', views.set_session),
     path('get_session/', views.get_session),
+    path('temp_var/', views.temp_var),
+    path('temp_tags/', views.temp_tags),
+    path('temp_filter/', views.temp_filter),
 ]

@@ -144,3 +144,21 @@ def get_session(request):
     username = request.session['username']
     age = request.session['age']
     return HttpResponse(username + ':' + str(age))
+
+
+def temp_var(request):
+    my_dict = {'title': '值'}
+    my_list = [1, 2, 3]
+    book = BookInfo.objects.get(id=1)
+    context = {'my_dict': my_dict, 'my_list': my_list, 'book': book}
+    return render(request, 'booktest/temp_var.html', context)
+
+
+def temp_tags(request):
+    book = BookInfo.objects.all()
+    return render(request, 'booktest/temp_tags.html', {'book': book})
+
+
+def temp_filter(request):
+    book = BookInfo.objects.all()
+    return render(request, 'booktest/temp_filter.html', {'book': book})
