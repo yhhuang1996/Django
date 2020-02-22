@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html转义</title>
+</head>
+<body>
+html转义
+{{ content|safe }}
+{% autoescape off %}
+{{ content }}
+{% endautoescape %}
+
+{{ test|default:'<h1>h</h1>' }}
+{{ test|default:'&lth1&gth&lt/h1&gt' }}
+
+</body>
+</html>

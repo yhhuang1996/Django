@@ -57,8 +57,27 @@ def show_arg(request, num):
     return HttpResponse(num)
 
 
+def login_require(view_func):
+    """登录判断装饰器"""
+    def wrapper(request, *args, **kwargs):
+        """判断用户是否登录"""
+        if 'has_login' in request.session:
+            # 用户已登陆，调用对应的视图
+            return view_func(request, *args, **kwargs)
+        else:
+            return redirect('/login')
+    return wrapper
+
+
 def login(request):
-    return render(request, 'booktest/login.html')
+    if 'has_login' in request.session:
+        return redirect('/change_password')
+    else:
+        if 'username' in request.COOKIES:
+            username = request.COOKIES['username']
+        else:
+            username = ''
+        return render(request, 'booktest/login.html', {'username': username})
 
 
 def login_check(request):
@@ -67,16 +86,38 @@ def login_check(request):
     # 1.获取提交的用户名和密码
     username = request.POST.get('username')
     password = request.POST.get('password')
-
+    remember = request.POST.get('remember')
     if username == 'smart' and password == '123':
         # 用户名密码正确，跳转到首页
-        return redirect('/index')
+        # response = redirect('/index')
+        response = redirect('/change_password')
+        if remember == 'on':
+            response.set_cookie('username', username)
+        request.session['has_login'] = True
+        request.session['username'] = username
+        return response
     else:
         # 用户名密码错误，跳转到登录页面
         return redirect('/login')
     # 2.验证
     # 3.返回应答
     # return HttpResponse('ok')
+
+
+@login_require
+def change_password(request):
+    return render(request, 'booktest/change_password.html')
+
+
+@login_require
+def change_check(request):
+    new_password = request.POST.get('password')
+    check = request.POST.get('check_password')
+    username = request.session['username']
+    if new_password == check:
+        return HttpResponse('%s 修改密码为：%s' % (username, check))
+    else:
+        return redirect('/change_password')
 
 
 def ajax(request):
@@ -162,3 +203,26 @@ def temp_tags(request):
 def temp_filter(request):
     book = BookInfo.objects.all()
     return render(request, 'booktest/temp_filter.html', {'book': book})
+
+
+def temp_inherit(request):
+    """模版继承"""
+    return render(request, 'booktest/child.html')
+
+
+def html_escape(request):
+    return render(request, 'booktest/html_escape.html', {'content': '<h1>hello</h1>'})
+
+
+def url_reverse(request):
+    return render(request, 'booktest/url_reverse.html')
+
+
+def show_args(request, a):
+    return HttpResponse('ok')
+
+
+from django.urls import reverse
+def test_redirect(request):
+    url = reverse('booktest:args', kwargs={'a': 2})
+    return redirect(url)
